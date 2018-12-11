@@ -1,18 +1,18 @@
 // Dependancies
 
-const server = require('./lib/api/server');
+const server = require('./lib/api/server')
 
 //Declare the app
-let app = {};
+let app = {}
 
 //Initialization
 app.init = function(){
     //Start the server
-    server.init();
+    server.init()
 }
 
 //Execute the app
-app.init();
+app.init()
 
 //Export module
-module.exports = app;
+module.exports = app
