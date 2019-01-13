@@ -368,6 +368,11 @@
 								"name": "Content-Type",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -768,7 +773,7 @@
 							},
 							{
 								"key": "token",
-								"value": "4mes2hgqde8hgizptyfj",
+								"value": "{{ACCESS_TOKEN}}",
 								"type": "text"
 							}
 						],
