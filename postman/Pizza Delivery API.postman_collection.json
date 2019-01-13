@@ -1,0 +1,829 @@
+{
+	"info": {
+		"_postman_id": "2b61f1ab-922b-47f8-bc33-25a89e97fd06",
+		"name": "Pizza Delivery API",
+		"description": "Introduction\n\nThe Pizza Delivery API is built on HTTP. It follows RESTful standards and it uses preditable resource-oriented URLs. Pizza Delivery API is integrated with Mailgun which is used to email order reciepts to customers.\n\n\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ordering",
+			"item": [
+				{
+					"name": "Order Creation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cartId\":\"dcy2k4uf65\",\n\t\"paymentToken\":\"1234d\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders?userId=fxhnw3l00q",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "fxhnw3l00q"
+								}
+							]
+						},
+						"description": "Converts a user's shopping cart to an order"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders?id=dcy2k4uf65&userId=dcy2k4uf65",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "dcy2k4uf65"
+								},
+								{
+									"key": "userId",
+									"value": "dcy2k4uf65"
+								}
+							]
+						},
+						"description": "Gets a user's order"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "User Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                        \"firstName\" : \"Dan\",\r\n                        \"lastName\" : \"Favano\",\r\n                        \"email\": \"dvfavano@gmail.com\",\r\n                        \"password\" : \"password\",\r\n                        \"streetAddress\": \"123 main St, Carlsbad, CA\",\r\n                        \"tosAgreement\" : true\r\n                    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users?id=5igq3gc3nc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5igq3gc3nc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/users?id=dcy2k4uf65",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "dcy2k4uf65"
+								},
+								{
+									"key": "token",
+									"value": "dw4w5d9dl5zslnlb1t68",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Creation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                        \"firstName\" : \"Jim\",\r\n                        \"lastName\" : \"Favano\",\r\n                        \"email\": \"dvfavano@gmail.com\",\r\n                        \"password\" : \"password\",\r\n                        \"streetAddress\": \"123 main St, Carlsbad, CA\",\r\n                        \"tosAgreement\" : true\r\n                    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Deletion",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/users?id=5igq3gc3nc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "5igq3gc3nc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Access Tokens",
+			"item": [
+				{
+					"name": "Access Token Creation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6becd9af-f7b6-4834-bb7f-3b570a94654c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"",
+									"    var jsonData = pm.response.json();",
+									"    pm.environment.set(\"ACCESS_TOKEN\", jsonData.tokenId);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"password\":\"password\",\n\t\"userId\": \"dcy2k4uf65\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/tokens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tokens"
+							]
+						},
+						"description": "Creates an access token that can be used on endpoints that require authentication"
+					},
+					"response": []
+				},
+				{
+					"name": "Access Token Deletion",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/tokens?id=l78lywy0wo71pvh72zqo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tokens"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "l78lywy0wo71pvh72zqo"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Access Token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/tokens?id=osej6twuqg06ru0shgqp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tokens"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "osej6twuqg06ru0shgqp"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Extend Access Token",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n                        \"id\" : \"osej6twuqg06ru0shgqp\",\r\n                        \"extend\": true\r\n                    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/tokens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tokens"
+							]
+						},
+						"description": "This will extend the expiration date of an access token"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "29938909-b865-4823-8f02-858817481da3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "11171f5f-6b6c-4a1b-b32d-f9dbcd22b649",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Shopping Cart",
+			"item": [
+				{
+					"name": "Shopping Cart Creation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"menuItems\":[\"ueryk7jjeg\", \"ueryk7jjeg\"]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/cart?userId=dcy2k4uf65",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "dcy2k4uf65"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"menuItems\":[\"ueryk7jjeg\", \"ueryk7jjeg\", \"ueryk7jjeg\"]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/cart?id=dcy2k4uf65",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "dcy2k4uf65"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Shopping Cart Deletion",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/cart?id=dcy2k4uf65",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "dcy2k4uf65"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Shopping Cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/cart?id=dcy2k4uf65",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"cart"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "dcy2k4uf65"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "Menu Item Deletion",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu?id=nqwz2fv6wy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "nqwz2fv6wy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menu Item Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                        \"name\": \"Meat Lovers\",\r\n                        \"description\": \"All the animals on one pizza\",\r\n                        \"price\": 12.99\r\n                    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu?id=nqwz2fv6wy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "nqwz2fv6wy"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Menu Item Creation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "{{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n                        \"name\": \"Meat Lovers\",\r\n                        \"description\": \"All the animals on one pizza\",\r\n                        \"price\": 11.99\r\n                    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu?userId=dcy2k4uf65",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "dcy2k4uf65"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Menu Item",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "token",
+								"value": "4mes2hgqde8hgizptyfj",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/menu?id=nqwz2fv6wy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"menu"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "nqwz2fv6wy"
+								},
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "aa8b88bd-500f-4602-bbfc-9fdc3f05650b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "702bbfed-5333-4e43-bd55-795e3d3e3ef3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
