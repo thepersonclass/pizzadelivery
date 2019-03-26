@@ -1,6 +1,5 @@
 // Dependancies
-
-const server = require('./lib/api/server')
+const server = require('./lib/server')
 
 //Declare the app
 let app = {}
